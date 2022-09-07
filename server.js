@@ -15,7 +15,7 @@ const app = express()
 // route
 const authRoute = require('./route/authRoute')
 const imageRoute = require('./route/imageRoute')
-const productRoute = require('./route/productRoute')
+
 
 // configuration
 app.use(cors());
@@ -30,16 +30,15 @@ app.use(express.json());
 
 app.use(`/api/v1/auth`, authRoute)
 app.use(`/api/v1/image`, imageRoute)
-app.use(`/api/v1/product`, productRoute)
 
-// if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
 
-// }
+    app.use(express.static(`client/build`));
+    app.get(`*`, (req, res) => {
+        res.sendFile(path.join(__dirname + `/client/build/index.html`))
+    })
+}
 
-app.use(express.static(`client/build`));
-app.get(`*`, (req, res) => {
-    res.sendFile(path.join(__dirname + `/client/build/index.html`))
-})
 
 const PORT = process.env.PORT || 7000;
 const connectDB = require('./db')
