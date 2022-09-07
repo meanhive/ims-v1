@@ -13,29 +13,29 @@ function useAuth(token) {
             const getData = async () => {
                 const res = await axios.get(`/api/v1/auth/userinfo`, {
                     headers: { Authorization: token }
-                    });
-                    console.log('token =',token)
+                });
+                console.log('token =', token)
                 setUser(res.data.user)
                 setIsLogged(true)
                 if (res.data.user.role === "superadmin") {
-                        setIsAdmin(true)
+                    setIsAdmin(true)
                 }
-                if (res.data.user.role === "user") {
+                if (res.data.user.role === "student") {
                     setIsUser(true)
                 }
             }
 
             getData()
         }
-    },[token])
+    }, [token])
 
 
     return {
         userData: [user, setUser],
         isLogged: [isLogged, setIsLogged],
         isUser: [isUser, setIsUser],
-        isAdmin: [isAdmin,setIsAdmin]
-  }
+        isAdmin: [isAdmin, setIsAdmin]
+    }
 }
 
 export default useAuth

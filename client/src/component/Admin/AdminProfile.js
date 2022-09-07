@@ -39,10 +39,7 @@ function AdminProfile() {
                                             <strong className="text-secondary">Mobile</strong>
                                             <span className="text-dark float-end"> {user.mobile} </span>
                                         </li>
-                                        <li className="list-group-item">
-                                            <strong className="text-secondary">Orders</strong>
-                                            <span className="text-warning float-end"> {user.orders.length === 0 ? "No Orders" : user.orders.length} </span>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
