@@ -1,0 +1,4 @@
+#v-pills-tab button.active {
+    background-color: none;
+    border-left: 3px solid deeppink;
+}
