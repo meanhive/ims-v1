@@ -10,7 +10,7 @@ function AdminProfile() {
         <div className="container">
             <div className="row">
                 <SideMenu />
-                <section className="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5">
+                <section className="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-2">
                     <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
                         <h2 className="h2">Profile</h2>
                         <button className="btn btn-primary d-lg-none d-md-none float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive">
