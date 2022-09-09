@@ -11,33 +11,75 @@ function SideMenu() {
             <div className="position-sticky pt-0 text-center sidebar-sticky">
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="/admin/dashboard">
+                        <NavLink className="nav-link" aria-current="page" to="/admin/dashboard">
                             <span data-feather="home" className="align-text-bottom"></span>
                             Dashboard
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/admin/orders">
+                        <NavLink className="nav-link" to="/admin/courses">
                             <span data-feather="file" className="align-text-bottom"></span>
-                            Orders
+                            Courses
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/admin/products">
+                        <NavLink className="nav-link" to="/admin/batches">
                             <span data-feather="shopping-cart" className="align-text-bottom"></span>
-                            Products
+                            Batches
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/admin/allUsers">
+                        <NavLink className="nav-link" to="/admin/enquiries">
                             <span data-feather="users" className="align-text-bottom"></span>
-                            Users
+                            Enquiry
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="#">
+                        <NavLink className="nav-link" to="/admin/students">
                             <span data-feather="bar-chart-2" className="align-text-bottom"></span>
-                            Reports
+                            Students
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/fees">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Fees
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/exam">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Exam
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/certificates">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Certificates
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/id-cards">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            ID cards
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/notifications">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Notifications
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/employees">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Employees
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/admin/settings">
+                            <span data-feather="bar-chart-2" className="align-text-bottom"></span>
+                            Settings
                         </NavLink>
                     </li>
                     <li className="nav-item">

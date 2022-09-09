@@ -23,6 +23,18 @@ import ProtectedRoute from '../middleware/ProtectedRoute'
 import AdminProfile from './Admin/AdminProfile'
 import UserProfile from './User/UserProfile'
 import AllUsers from './Admin/AllUsers'
+import Courses from './Admin/Courses'
+import Batches from './Admin/Batches'
+import Enquiries from './Admin/Enquiries'
+import Students from './Admin/Students'
+import Fees from './Admin/Fees'
+import Exam from './Admin/Exam'
+import Certificate from './Admin/Certificates'
+import IdCards from './Admin/IdCards'
+import Notifications from './Admin/Notifications'
+import Employees from './Admin/Employees'
+import Settings from './Admin/Settings'
+import Installments from './Admin/Installments'
 
 
 function Main(props) {
@@ -37,7 +49,7 @@ function Main(props) {
             <Menu />
             <ToastContainer autoClose={5000} position="top-center" />
             <Routes>
-                <Route path={`/`} element={<Home />} />
+                <Route path={`/`} element={isAdmin ? <Navigate to={`/admin/dashboard`} /> : <Home />} />
                 <Route path={`/about`} element={<About />} />
                 <Route path={`/contact`} element={<Contact />} />
                 <Route path={`/login`} element={isLogged ? <Pnf /> : <Login />} />
@@ -46,8 +58,21 @@ function Main(props) {
                     isAdmin ? (
                         <Route element={<ProtectedRoute />}>
                             <Route path={`/admin/dashboard`} element={<AdminDashboard />} />
+                            <Route path={`/admin/dashboard`} element={<AdminDashboard />} />
                             <Route path={`/admin/profile`} element={<AdminProfile />} />
                             <Route path={`/admin/allUsers`} element={<AllUsers />} />
+                            <Route path={`/admin/courses`} element={<Courses />} />
+                            <Route path={`/admin/batches`} element={<Batches />} />
+                            <Route path={`/admin/enquiries`} element={<Enquiries />} />
+                            <Route path={`/admin/students`} element={<Students />} />
+                            <Route path={`/admin/fees`} element={<Fees />} />
+                            <Route path={`/admin/exam`} element={<Exam />} />
+                            <Route path={`/admin/certificates`} element={<Certificate />} />
+                            <Route path={`/admin/id-cards`} element={<IdCards />} />
+                            <Route path={`/admin/notifications`} element={<Notifications />} />
+                            <Route path={`/admin/employees`} element={<Employees />} />
+                            <Route path={`/admin/settings`} element={<Settings />} />
+                            <Route path={`/admin/installments`} element={<Installments />} />
                         </Route>) : (
                         <Route element={<ProtectedRoute />}>
                             <Route path={`/user/dashboard`} element={<UserDashboard />} />

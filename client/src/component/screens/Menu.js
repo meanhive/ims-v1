@@ -76,7 +76,7 @@ function Menu(props) {
   }
 
   return (
-    <nav className="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-secondary">
+    <nav className="navbar navbar-expand-md fixed-top navbar-dark bg-secondary">
       <div className="container">
         <NavLink to={isAdmin ? `/admin/dashboard` : `/`} className="navbar-brand">
           {isAdmin ? "Admin" : "Institute Management System"}

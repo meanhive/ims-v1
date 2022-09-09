@@ -4,7 +4,7 @@ import SideMenu from './menu/SideMenu';
 import ResponsiveMenu from './menu/ResponsiveMenu';
 import { NavLink } from 'react-router-dom'
 
-function Sample() {
+function Batches() {
     const context = useContext(GlobalContext)
 
     return (
@@ -13,7 +13,7 @@ function Sample() {
                 <SideMenu />
                 <section className="col-md-10 ms-sm-auto col-lg-10 px-md-4 mt-5">
                     <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
-                        <h2 className="h2">Sample title</h2>
+                        <h2 className="h2">Batches</h2>
                         <button className="btn btn-primary d-lg-none d-md-none float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive">
                             <span className="bi bi-arrow-left"></span>
                         </button>
@@ -29,4 +29,4 @@ function Sample() {
     )
 }
 
-export default Sample
+export default Batches
