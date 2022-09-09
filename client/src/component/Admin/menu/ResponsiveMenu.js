@@ -26,7 +26,7 @@ function ResponsiveMenu() {
                         <NavLink to="/admin/students" className="nav-link">Students</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/admin/fee" className="nav-link">Fee</NavLink>
+                        <NavLink to="/admin/fees" className="nav-link">Fee</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/admin/exam" className="nav-link">Exam</NavLink>
