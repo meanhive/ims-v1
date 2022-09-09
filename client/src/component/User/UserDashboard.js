@@ -1,37 +1,30 @@
-import React from 'react'
-import AddressBook from './component/AddressBook'
-import Reviews from './component/Reviews'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../../GlobalContext';
+
+import UserMenu from './menu/user-menu'
 
 import './css/style.css'
 
 function UserDashboard() {
+  const data = useContext(GlobalContext)
+
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-md-12 mt-3">
-          <div className="d-flex align-items-start">
-            <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button className="nav-link" id="address-tab" data-bs-toggle="pill" data-bs-target="#address" type="button" role="tab" aria-controls="address" aria-selected="false">Address Book</button>
-
-              <button className="nav-link" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
-            </div>
-
-            <div className="tab-content" id="v-pills-tabContent">
-              <div className="tab-pane fade show active" id="address" role="tabpanel" aria-labelledby="address-tab" tabindex="0">
-                <h3 className="text-center">Address</h3>
-                <AddressBook />
-              </div>
-
-              <div className="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab" tabindex="0">
-                <h3 className="text-center">Reviews</h3>
-                <Reviews />
-              </div>
-
-            </div>
+        <section className="col-md-10 offset-md-1 offset-lg-1 col-lg-10 px-md-4 mt-2">
+          <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 border-bottom">
+            <h2 className="h2">Student dashboard</h2>
+            <button className="btn btn-primary  float-end" data-bs-toggle="offcanvas" data-bs-target="#userMenu">
+              <span className="bi bi-arrow-left"></span>
+            </button>
           </div>
 
-        </div>
+          <div className="row">
+
+          </div>
+        </section>
       </div>
+      <UserMenu />
     </div>
   )
 }

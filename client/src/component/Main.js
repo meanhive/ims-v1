@@ -35,6 +35,10 @@ import Notifications from './Admin/Notifications'
 import Employees from './Admin/Employees'
 import Settings from './Admin/Settings'
 import Installments from './Admin/Installments'
+import StudentReport from './User/component/StudentReport'
+import StudentId from './User/component/StudentId'
+import AdmissionDetails from './User/component/AdmissionDetails'
+import FeeReport from './User/component/FeeReport'
 
 
 function Main(props) {
@@ -75,8 +79,12 @@ function Main(props) {
                             <Route path={`/admin/installments`} element={<Installments />} />
                         </Route>) : (
                         <Route element={<ProtectedRoute />}>
-                            <Route path={`/user/dashboard`} element={<UserDashboard />} />
-                            <Route path={`/user/profile`} element={<UserProfile />} />
+                            <Route path={`/student/dashboard`} element={<UserDashboard />} />
+                            <Route path={`/student/profile`} element={<UserProfile />} />
+                            <Route path={`/student/report`} element={<StudentReport />} />
+                            <Route path={`/student/id`} element={<StudentId />} />
+                            <Route path={`/student/admission`} element={<AdmissionDetails />} />
+                            <Route path={`/student/fee`} element={<FeeReport />} />
                         </Route>
                     )
                 }

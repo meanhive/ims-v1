@@ -48,21 +48,15 @@ function Menu(props) {
               {
                 isAdmin ?
                   <NavLink to={`/admin/profile`} className="dropdown-item">Profile</NavLink>
-                  : <NavLink to={`/user/profile`} className="dropdown-item">Profile</NavLink>
+                  : <NavLink to={`/student/profile`} className="dropdown-item">Profile</NavLink>
               }
             </li>
             <li>
               {
-                isUser ? <NavLink to={`/user/dashboard`} className="dropdown-item">User Dashboard</NavLink> : null
+                isUser ? <NavLink to={`/student/dashboard`} className="dropdown-item">Student Dashboard</NavLink> : null
               }
               {
                 isAdmin ? <NavLink to={`/admin/dashboard`} className="dropdown-item">Admin Dashboard</NavLink> : null
-              }
-            </li>
-            <li>
-              {
-                isUser ? <NavLink to={`/user/orders`} className="dropdown-item">Orders</NavLink> :
-                  null
               }
             </li>
             <li className="dropdown-divider"></li>
