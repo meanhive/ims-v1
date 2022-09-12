@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import images from '../../images'
 import "../Styles/carousel.css"
 
 function Home() {
@@ -12,7 +13,8 @@ function Home() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+            {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg> */}
+            <img src={images.slide_1} alt="no image found" className="d-block w-100" />
 
             <div className="container">
               <div className="carousel-caption text-start">
@@ -23,7 +25,8 @@ function Home() {
             </div>
           </div>
           <div className="carousel-item">
-            <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+            {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg> */}
+            <img src={images.slide_2} alt="no image found" className="d-block w-100" />
 
             <div className="container">
               <div className="carousel-caption">
@@ -34,7 +37,8 @@ function Home() {
             </div>
           </div>
           <div className="carousel-item">
-            <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
+            {/* <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg> */}
+            <img src={images.slide_3} alt="no image found" className="d-block w-100" />
 
             <div className="container">
               <div className="carousel-caption text-end">
