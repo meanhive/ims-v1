@@ -40,7 +40,7 @@ function Settings() {
 
                         <div className="col-md-6 col-sm-12">
                             <div className="card">
-                                <div className="card-header bg-primary">
+                                <div className="card-header bg-primary text-white">
                                     <h4 className="text-center">General Settings</h4>
                                 </div>
                                 <div className="card-body">
@@ -96,16 +96,68 @@ function Settings() {
                                         <label htmlFor="enrolmentIdPrefix">Enrollment Id Prefix</label>
                                         <input type="text" name="enrolmentIdPrefix" id="enrolmentIdPrefix" value={setting.enrolmentIdPrefix} onChange={readValue} className="form-control" required />
                                     </div>
-                                    <div className="form-group mt-3"></div>
+                                    <div className="form-group mt-3">
+                                        <label htmlFor="receiptNumberPrefix">Receipt Number Prefix</label>
+                                        <input type="text" name="receiptNumberPrefix" id="receiptNumberPrefix" value={setting.receiptNumberPrefix} onChange={readValue} className="form-control" required />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-12">
                             <div className="card">
-                                <div className="card-header bg-info">
-                                    <h4 className="text-center">Email Settings</h4>
+                                <div className="card-header bg-danger text-white">
+                                    <h4 className="text-center">Notification Settings</h4>
                                 </div>
-                                <div className="card-body"></div>
+                                <div className="card-body">
+                                    <div className="card">
+                                        <div className="card-header bg-secondary text-white">
+                                            <h5 className="text-center">Email Settings</h5>
+                                        </div>
+
+                                        <div className="card-body">
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="hostName">Host Name</label>
+                                                <input type="text" name="hostName" id="hostName" value={setting.hostName} onChange={readValue} className="form-control" />
+                                            </div>
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="username">Username</label>
+                                                <input type="text" name="username" id="username" value={setting.username} onChange={readValue} className="form-control" required />
+                                            </div>
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="password">Password</label>
+                                                <input type="password" name="password" id="password" value={setting.password} onChange={readValue} className="form-control" required />
+                                            </div>
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="encryption">Encryption</label>
+                                                <input type="text" name="encryption" id="encryption" value={setting.encryption} onChange={readValue} className="form-control" required />
+                                            </div>
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="port">Port</label>
+                                                <input type="number" name="port" id="port" value={setting.port} onChange={readValue} className="form-control" required />
+                                            </div>
+                                            <div className="form-group mt-2">
+                                                <label htmlFor="from">From Email id</label>
+                                                <input type="email" name="from" id="from" value={setting.from} onChange={readValue} className="form-control" required />
+                                            </div>
+                                        </div>
+                                    </div>{/* email setting end here */}
+
+                                    <div className="card">
+                                        <div className="card-header bg-secondary text-white">
+                                            <h5 className="text-center">Payment Settings</h5>
+                                        </div>
+                                        <div className="card-body">
+                                            <div className="form-group mt-2">
+                                                <div className="form-input">
+                                                    <input type="checkbox" name="isEnableStripe" id="isEnableStripe" value={setting.isEnableStripe} onChange={readValue} className="form-check-input" />
+                                                    <label htmlFor="isEnableStripe" className="form-check-label ps-2">Enable Stripe ?</label>
+                                                </div>
+                                            </div>
+                                            <div className="form-group mt-2"></div>
+                                            <div className="form-group mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
