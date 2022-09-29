@@ -7,7 +7,7 @@ export const GlobalContext = createContext();
 
 
 function DataProvider(props) {
-  const [token,setToken] = useState(null)
+  const [token, setToken] = useState(null)
 
 
   useEffect(() => {
@@ -18,10 +18,10 @@ function DataProvider(props) {
             setToken(res.data.accessToken)
           }).catch(err => toast.error(err.response.data.msg))
       }
-          getToken()
+      getToken()
     }
 
-  },[])
+  }, [])
 
   const data = {
     token: [token, setToken],
@@ -30,7 +30,7 @@ function DataProvider(props) {
 
   return (
     <GlobalContext.Provider value={data} >
-        { props.children }
+      {props.children}
     </GlobalContext.Provider>
   )
 }
