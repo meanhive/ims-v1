@@ -13,6 +13,7 @@ function Settings() {
     });
     const [isEnq, setIsEnq] = useState(false)
     const [isPay, setIsPay] = useState(false)
+    const [isLogo, setIsLogo] = useState(false)
 
 
     const readValue = (e) => {
@@ -24,6 +25,9 @@ function Settings() {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setting.isEnableStripe = isPay
+        setting.isLogoEnable = isLogo
+        setting.isEnqTitleEnable = isEnq
         console.log('settings =', setting);
     }
 
@@ -51,8 +55,8 @@ function Settings() {
                                     </div>
                                     <div className="card-body">
                                         <div className="form-check mt-2">
-                                            <input type="checkbox" name="isEnq" id="isEnq" className="form-check-input" value="isEnq" checked={isEnq} onChange={() => setIsEnq(!isEnq)} required />
-                                            <label htmlFor="isEnqe">Is Enquiry Title Enabled?</label>
+                                            <input type="checkbox" name="isEnq" id="isEnq" className="form-check-input" value="isEnq" checked={isEnq} onChange={(e) => setIsEnq(e.target.checked)} />
+                                            <label htmlFor="isEnq">Is Enquiry Title Enabled?</label>
                                         </div>
 
                                         <div className="form-group mt-3">
@@ -65,12 +69,12 @@ function Settings() {
                                                 <img src={logo.url} alt="Logo image" className="card-img-top" />
                                                 <div className="card-body"></div>
                                             </div>
-                                            <input type="file" name="logo" id="logo" className="form-control" required />
+                                            <input type="file" name="logo" id="logo" className="form-control" />
                                         </div>
 
                                         <div className="form-check mt-3">
-                                            <input type="checkbox" name="isLogoEnable" id="isLogoEnable" className="form-check-input" />
-                                            <label htmlFor="isLogoEnable">Enable institute Logo?</label>
+                                            <input type="checkbox" name="isLogo" id="isLogo" value={"isLogo"} onChange={(e) => setIsLogo(e.target.checked)} checked={isLogo} className="form-check-input" />
+                                            <label htmlFor="isLogo">Enable institute Logo?</label>
                                         </div>
 
                                         <div className="form-group mt-3">
@@ -155,8 +159,8 @@ function Settings() {
                                             <div className="card-body">
                                                 <div className="form-group mt-2">
                                                     <div className="form-input">
-                                                        <input type="checkbox" name="isEnableStripe" id="isEnableStripe" value={setting.isEnableStripe} onChange={readValue} className="form-check-input" />
-                                                        <label htmlFor="isEnableStripe" className="form-check-label ps-2">Enable Stripe ?</label>
+                                                        <input type="checkbox" name="isPay" id="isPay" value={"isPay"} onChange={(e) => setIsPay(e.target.checked)} checked={isPay} className="form-check-input" />
+                                                        <label htmlFor="isPay" className="form-check-label ps-2">Enable Stripe ?</label>
                                                     </div>
                                                 </div>
                                                 <div className="form-group mt-2">
@@ -166,6 +170,10 @@ function Settings() {
                                                 <div className="form-group mt-2">
                                                     <label htmlFor="stripeSecret">StripeSecret</label>
                                                     <input type="password" name="stripeSecret" id="stripeSecret" value={setting.stripeSecret} onChange={readValue} className="form-control" required />
+                                                </div>
+                                                <div className="form-group mt-2">
+                                                    <label htmlFor="currency">Currency</label>
+                                                    <input type="text" name="currency" id="currency" value={setting.currency} onChange={readValue} className="form-control" required />
                                                 </div>
                                             </div>
                                             <div className="card-footer">
