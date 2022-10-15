@@ -110,6 +110,17 @@ const authController = {
         } catch (err) {
             return res.status(500).json({ msg: err.message })
         }
+    },
+    updateProfile: async (req,res) => {
+        try {
+            const { name, mobile, image, address } = req.body
+
+            const output = await Auth.findByIdAndUpdate({_id: req.user.id}, {name, mobile, image, address})
+            return res.status(200).json({ msg: "User updated successfully.", data: output})
+
+        }catch(err) {
+            return res.status(500).json({ msg: err.message })
+        }
     }
 }
 
