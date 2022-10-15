@@ -8,6 +8,7 @@ import axios from 'axios';
 function AdminProfile() {
     const data = useContext(GlobalContext)
     const [user] = data.authApi.userData
+    const [token] = data.token
 
     const [isEdit,setIsEdit] = useState(false)
     const [person,setPerson] = useState({
