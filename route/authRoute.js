@@ -9,6 +9,7 @@ route.get(`/refreshToken`, authController.refreshToken)
 route.get(`/userinfo`, authMiddleware, authController.getUserInfo)
 
 route.patch(`/resetPassword`, authController.resetPassword)
+route.patch(`/updateProfile`, authMiddleware, authController.updateProfile)
 
 
 
