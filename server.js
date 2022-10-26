@@ -15,6 +15,7 @@ const app = express()
 // route
 const authRoute = require('./route/authRoute')
 const imageRoute = require('./route/imageRoute')
+const settingRoute = require('./route/settingRoute')
 
 
 // configuration
@@ -30,6 +31,7 @@ app.use(express.json());
 
 app.use(`/api/v1/auth`, authRoute)
 app.use(`/api/v1/image`, imageRoute)
+app.use(`/api/v1/setting`, settingRoute)
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
 

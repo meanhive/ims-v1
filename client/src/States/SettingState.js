@@ -8,7 +8,7 @@ const SettingState = {
     institutePhone: "",
     instituteMobile: "",
     instituteEmail: "",
-    enrolmentIdPrefix: "",
+    enrollmentIdPrefix: "",
     receiptNumberPrefix: "",
     hostName: "",
     username: "",

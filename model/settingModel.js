@@ -1,36 +1,6 @@
 const mongoose = require('mongoose');
 
-const EmailSettingSchema = mongoose.Schema({
-    hostName: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    username: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    password: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    encryption: {
-        type: String,
-        default: "tls"
-    },
-    port: {
-        type: Number,
-        required: true
-    },
-    from: {
-        type: String,
-        required: true
-    }
-});
-
-const GeneralSettingSchema = mongoose.Schema({
+const GeneralSettingSchema = {
     enqFormTitle: {
         type: String,
         required: true
@@ -81,10 +51,41 @@ const GeneralSettingSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-}
-);
+};
 
-const PaymentSettingSchema = mongoose.Schema({
+
+const EmailSettingSchema = {
+    hostName: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    username: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    encryption: {
+        type: String,
+        default: "tls"
+    },
+    port: {
+        type: Number,
+        required: true
+    },
+    from: {
+        type: String,
+        required: true
+    }
+}
+
+
+const PaymentSettingSchema = {
     currency: {
         type: String,
         required: true,
@@ -107,13 +108,13 @@ const PaymentSettingSchema = mongoose.Schema({
         type: Boolean,
         default: true
     }
-})
+}
 
 
 const Setting = new mongoose.Schema({
-    generalSettings: [GeneralSettingSchema],
-    emailSettings: [EmailSettingSchema],
-    paymentSettings: [PaymentSettingSchema]
+    generalSettings: GeneralSettingSchema,
+    emailSettings: EmailSettingSchema,
+    paymentSettings: PaymentSettingSchema
 
 }, {
     collection: "settings",

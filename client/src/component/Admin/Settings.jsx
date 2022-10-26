@@ -3,6 +3,8 @@ import { GlobalContext } from '../../GlobalContext';
 import SideMenu from './menu/SideMenu';
 import ResponsiveMenu from './menu/ResponsiveMenu';
 import SettingState from '../../States/SettingState';
+import { toast } from 'react-toastify'
+import axios from 'axios'
 // import { NavLink } from 'react-router-dom'
 
 function Settings() {
@@ -23,16 +25,41 @@ function Settings() {
 
 
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
         setting.isEnableStripe = isPay
+        setting.instituteLogo = logo
         setting.isLogoEnable = isLogo
         setting.isEnqTitleEnable = isEnq
-        console.log('settings =', setting);
+        // console.log('settings =', setting);
+        await axios.post(`/api/v1/setting`, setting).then(res => {
+            toast.success("Settings saved Successfully")
+        }).catch(err => toast.error(err.response.data.msg))
+
     }
 
 
-    const handleUpload = (e) => { }
+    const handleUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file)
+            return toast.error("file doesn't exists")
+
+        if (file.size > 1024 * 1024)
+            return toast.error('file size must be less than 1MB')
+
+        let formData = new FormData();
+        formData.append('logoImg', file);
+
+        // setLogo(file)
+        await axios.post(`/api/v1/image/logo/upload`, formData, {
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        }).then(res => {
+            setLogo(res.data)
+        }).catch(err => toast.error(err.message))
+
+    }
 
     return (
         <div className="container">
@@ -69,7 +96,7 @@ function Settings() {
                                                 <img src={logo.url} alt="Logo image" className="card-img-top" />
                                                 <div className="card-body"></div>
                                             </div>
-                                            <input type="file" name="logo" id="logo" className="form-control" />
+                                            <input type="file" name="logo" id="logo" onChange={handleUpload} className="form-control" />
                                         </div>
 
                                         <div className="form-check mt-3">
@@ -103,8 +130,8 @@ function Settings() {
                                         </div>
 
                                         <div className="form-group mt-3">
-                                            <label htmlFor="enrolmentIdPrefix">Enrollment Id Prefix</label>
-                                            <input type="text" name="enrolmentIdPrefix" id="enrolmentIdPrefix" value={setting.enrolmentIdPrefix} onChange={readValue} className="form-control" required />
+                                            <label htmlFor="enrollmentIdPrefix">Enrollment Id Prefix</label>
+                                            <input type="text" name="enrollmentIdPrefix" id="enrollmentIdPrefix" value={setting.enrollmentIdPrefix} onChange={readValue} className="form-control" required />
                                         </div>
                                         <div className="form-group mt-3">
                                             <label htmlFor="receiptNumberPrefix">Receipt Number Prefix</label>
