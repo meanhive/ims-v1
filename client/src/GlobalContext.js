@@ -2,13 +2,14 @@ import React, { createContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import useAuth from './API/AuthApi'
+import useSettings from './API/SettingApi';
 
 export const GlobalContext = createContext();
 
 
 function DataProvider(props) {
   const [token, setToken] = useState(null)
-
+ const [settingId,setSettingId] = useState(false)
 
   useEffect(() => {
     if (localStorage.getItem('loginToken')) {
@@ -25,7 +26,9 @@ function DataProvider(props) {
 
   const data = {
     token: [token, setToken],
-    authApi: useAuth(token)
+    authApi: useAuth(token),
+    settingApi: useSettings(token),
+    settingsId: [settingId,setSettingId]
   }
 
   return (

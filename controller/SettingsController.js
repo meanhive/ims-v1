@@ -5,7 +5,7 @@ const SettingController = {
         try {
             // res.json({ msg: "get all setttings" })
             const settings = await Setting.find({})
-            return res.json({ settings })
+            return res.json({ settings: settings[0] })
         } catch (err) {
             return res.status(500).json({ msg: err.message })
         }
