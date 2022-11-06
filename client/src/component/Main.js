@@ -39,6 +39,7 @@ import StudentReport from './User/component/StudentReport'
 import StudentId from './User/component/StudentId'
 import AdmissionDetails from './User/component/AdmissionDetails'
 import FeeReport from './User/component/FeeReport'
+import UpdateSetting from './Admin/screens/UpdateSetting'
 
 
 function Main(props) {
@@ -77,6 +78,7 @@ function Main(props) {
                             <Route path={`/admin/employees`} element={<Employees />} />
                             <Route path={`/admin/settings`} element={<Settings />} />
                             <Route path={`/admin/installments`} element={<Installments />} />
+                            <Route path={`/admin/settings/update`} element={<UpdateSetting />} />
                         </Route>) : (
                         <Route element={<ProtectedRoute />}>
                             <Route path={`/student/dashboard`} element={<UserDashboard />} />
