@@ -121,7 +121,19 @@ const authController = {
         }catch(err) {
             return res.status(500).json({ msg: err.message })
         }
-    }
+    },
+    changeRole: async (req,res) => {
+        try {
+            const { role } = req.body
+
+            const output = await Auth.findByIdAndUpdate({_id: req.params.id}, {role})
+            return res.status(200).json({ msg: "Role Updated successfully.", data: output})
+
+        }catch(err) {
+            return res.status(500).json({ msg: err.message })
+        }
+    },
+
 }
 
 module.exports = authController

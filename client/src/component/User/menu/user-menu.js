@@ -17,6 +17,9 @@ function UserMenu() {
                         <NavLink to="/student/dashboard" className="nav-link">Dashboard</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink to="/student/batch" className="nav-link">Batch Details</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink to="/student/report" className="nav-link">Report</NavLink>
                     </li>
                     <li className="nav-item">

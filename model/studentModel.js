@@ -3,12 +3,10 @@ const mongoose = require('mongoose');
 const Student = new mongoose.Schema({
     enrolmentId: {
         type: String,
-        required: true,
         unique: true
     },
     course: {
-        type: String,
-        required: true
+        type: String
     },
     name: {
         type: String,
@@ -40,29 +38,32 @@ const Student = new mongoose.Schema({
         required: true,
         unique: true
     },
-    address: {
+    emergencyMobile: {
         type: String,
-        required: true
-    },
-    city: {
-        type: String,
-        required: true
-    },
-    zipcode: {
-        type: Number,
         required: true
     },
     qualification: {
         type: String,
         required: true
     },
-    photo: {
+    address: {
         type: String,
         required: true
     },
+    city: {
+        type: String,
+    },
+    zipcode: {
+        type: Number,
+    },
+    photo: {
+        type: Object,
+        default: {
+            url: ""
+        }
+    },
     signature: {
         type: String,
-        required: true
     },
     message: {
         type: String,
@@ -72,19 +73,10 @@ const Student = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    password: {
-        type: String,
-        required: true,
-        trim: true
-    },
     fee: {
         type: Number,
-        required: true
-    },
-    role: {
-        type: String,
-        default: "student"
-    },
+        default: 0
+    }
 }, {
     collection: "student",
     timestamps: true

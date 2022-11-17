@@ -40,6 +40,7 @@ import StudentId from './User/component/StudentId'
 import AdmissionDetails from './User/component/AdmissionDetails'
 import FeeReport from './User/component/FeeReport'
 import UpdateSetting from './Admin/screens/UpdateSetting'
+import Batch from './User/component/Batch'
 
 
 function Main(props) {
@@ -79,16 +80,21 @@ function Main(props) {
                             <Route path={`/admin/settings`} element={<Settings />} />
                             <Route path={`/admin/installments`} element={<Installments />} />
                             <Route path={`/admin/settings/update`} element={<UpdateSetting />} />
-                        </Route>) : (
-                        <Route element={<ProtectedRoute />}>
-                            <Route path={`/student/dashboard`} element={<UserDashboard />} />
-                            <Route path={`/student/profile`} element={<UserProfile />} />
-                            <Route path={`/student/report`} element={<StudentReport />} />
-                            <Route path={`/student/id`} element={<StudentId />} />
-                            <Route path={`/student/admission`} element={<AdmissionDetails />} />
-                            <Route path={`/student/fee`} element={<FeeReport />} />
-                        </Route>
-                    )
+                        </Route>) : null
+                }
+
+                {
+                        isUser ? (
+                            <Route element={<ProtectedRoute />}>
+                                <Route path={`/student/dashboard`} element={<UserDashboard />} />
+                                <Route path={`/student/profile`} element={<UserProfile />} />
+                                <Route path={`/student/report`} element={<StudentReport />} />
+                                <Route path={`/student/id`} element={<StudentId />} />
+                                <Route path={`/student/admission`} element={<AdmissionDetails />} />
+                                <Route path={`/student/fee`} element={<FeeReport />} />
+                                <Route path={`/student/batch`} element={<Batch />} />
+                            </Route>
+                        ) : null
                 }
                 <Route path={`/*`} element={<Pnf />} />
             </Routes>

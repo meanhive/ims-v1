@@ -44,14 +44,7 @@ function Menu(props) {
             Account
           </NavLink>
           <ul className="dropdown-menu">
-            <li>
-              {
-                isAdmin ?
-                  <NavLink to={`/admin/profile`} className="dropdown-item">Profile</NavLink>
-                  : <NavLink to={`/student/profile`} className="dropdown-item">Profile</NavLink>
-              }
-            </li>
-            <li>
+          <li>
               {
                 isUser ? <NavLink to={`/student/dashboard`} className="dropdown-item">Student Dashboard</NavLink> : null
               }
@@ -59,6 +52,18 @@ function Menu(props) {
                 isAdmin ? <NavLink to={`/admin/dashboard`} className="dropdown-item">Admin Dashboard</NavLink> : null
               }
             </li>
+            <li>
+              {
+                isAdmin ?
+                  <NavLink to={`/admin/profile`} className="dropdown-item">Profile</NavLink>
+                  : null
+              }
+
+              {
+                  isUser ? <NavLink to={`/student/profile`} className="dropdown-item">Profile</NavLink> : null
+              }
+            </li>
+           
             <li className="dropdown-divider"></li>
             <li>
               <NavLink to={`/`} onClick={logoutUser} className="btn btn-outline-danger dropdown-item">Logout</NavLink>
